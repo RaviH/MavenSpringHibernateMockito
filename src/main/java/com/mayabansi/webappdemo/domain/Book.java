@@ -19,6 +19,8 @@ public class Book implements java.io.Serializable {
     private double price;
     private int yearPublished;
 
+    private String authorFullName;
+
     public Book() {
     }
 
@@ -78,5 +80,14 @@ public class Book implements java.io.Serializable {
     public Book setYearPublished(int yearPublished) {
         this.yearPublished = yearPublished;
         return this;
+    }
+
+    @Transient
+    public String getAuthorFullName() {
+        return authorFullName;
+    }
+
+    public void setAuthorFullName(String authorFullName) {
+        this.authorFullName = authorFullName;
     }
 }
