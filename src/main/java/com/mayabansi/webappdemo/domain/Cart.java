@@ -48,6 +48,7 @@ public class Cart implements java.io.Serializable {
         return this;
     }
 
+    @Transient
     public List<CartItem> getCartItems() {
         return this.cartItemList;
     }
