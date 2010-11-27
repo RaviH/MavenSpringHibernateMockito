@@ -5,6 +5,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.SessionFactoryUtils;
 
 import java.io.Serializable;
@@ -23,7 +24,7 @@ import java.util.List;
  */
 public abstract class GenericDaoHibernate<Domain, PrimaryKey extends Serializable> implements GenericDao<Domain, PrimaryKey> {
 
-
+    @Autowired
     private SessionFactory sessionFactory;
     private final Class<Domain> type;
     private final ThreadLocal<Session> sessionThreadLocal = new ThreadLocal<Session>();
